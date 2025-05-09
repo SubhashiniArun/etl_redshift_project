@@ -1,8 +1,10 @@
 from flask import Flask
 import logging
+from flask_migrate import Migrate
 
-from .config import get_config
 from .models import db
+from .config import get_config
+from .routes.etl_routes import api_blueprint
 
 def create_app(config_name="development"):
 
@@ -15,8 +17,11 @@ def create_app(config_name="development"):
     # Setting up logging
     setup_logging(app)
 
-    # Initialize extensions
+    # Initialize DB
     db.init_app(app)
+    migrate = Migrate(app, db)
+
+    app.register_blueprint(api_blueprint, url_prefix='/api')
 
     return app
 
