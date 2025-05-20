@@ -2,16 +2,16 @@
 Producer Pipeline integrates with the external API
 Solves of the problem of tight coupling between the systems and reduces load on the server by processing the data in batches
 
-# Producer APP
+### Producer APP
 -> Pipeline that is automated to run every day afternoon 2 PM will load the external data 
 -> send the fetched data to RabbitMQ (port: 15672) for batch processing
 
-# Consumer APP
+### Consumer APP
 -> Consumer listens to the queue 'batch-queue'
 -> fetches the message/data from RabbitMQ (port: 15672) when a message gets added to the queue
 -> Load the message/data into Redshift table
 
-# Technologies
+### Technologies
 -> RabbitMQ (port: 15672) for queing the message
 -> Producer that pushes messages to queue is automated using cron job
 
@@ -20,7 +20,7 @@ Solves of the problem of tight coupling between the systems and reduces load on 
 -> consumer connects to RabbitMQ (port: 15672)  
 -> process the message and load into the #Redshift# table synchronously within the thread
 
-# Steps to run:
+### Steps to run:
 
 Producer
 -> Create a bash script - run_producer.sh 

@@ -7,11 +7,6 @@ import requests
 
 from authenticate_api import authenticate_weatherstack
 
-# twitter_api_key = "XoMLNpCrs7xgNlh6hqxZjk6aN"
-# twitter_api_secret_key = "gWv4FNF5pd3sn6tmGAk9yuw13M0sCCN1zsrlW2pIwxg6xEK6jg"
-# twitter_access_token = "2251685090-Kz4I4Xkoe1lV4ZMxBWE0woceRzufCqgBM6hI8IL"
-# twitter_token_secret = "ZZIpkFHrLQP2mkPc3YY6SXmeDFYsjH9b695t1vfeU3J1i"
-
 API_KEY = os.getenv("twitter_api_key")
 API_SECRET_KEY = os.getenv("twitter_api_secret_key")
 ACCESS_TOKEN = os.getenv("twitter_access_token")
